@@ -6,7 +6,6 @@ import {
   HandPlatter,
   Heart,
   Instagram,
-  MapPin,
   Menu,
   Minus,
   Plus,
@@ -15,6 +14,7 @@ import {
   Star,
   X,
 } from 'lucide-react';
+
 
 type CartItem = {
   id: number;
@@ -602,12 +602,12 @@ function App() {
             </div>
 
             <div className="feature-grid">
-              {features.map(({ title, text, icon: Icon }) => (
+              {features.map(({ title, text, icon: Icon }, index) => (
                 <div key={title} className="feature-card" data-reveal>
                   <div className="feature-icon">
                     <Icon size={22} />
                   </div>
-                  <div className="feature-index">0{features.indexOf(features.find((feature) => feature.title === title)!)+1}</div>
+                  <div className="feature-index">0{index + 1}</div>
                   <h3>{title}</h3>
                   <p>{text}</p>
                 </div>
